@@ -17,4 +17,6 @@ spec:
         - values.yaml
     repoURL: 'https://evryfs.github.io/helm-charts/'
     targetRevision: 0.0.11
-
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
