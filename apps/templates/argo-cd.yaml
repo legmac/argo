@@ -9,7 +9,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: default
-  project: default
+  project: dev
   source:
     path: charts/argo-cd
     repoURL: https://github.com/arthurk/argocd-example-install.git
