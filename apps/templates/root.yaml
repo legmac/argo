@@ -5,16 +5,15 @@ metadata:
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
+  project: dev
+  source:
+    repoURL: 'https://github.com/legmac/argo'
+    path: apps
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - values.yaml
   destination:
-    name: ''
     server: 'https://kubernetes.default.svc'
     namespace: default
-  source:
-    path: apps/
-    repoURL: https://github.com/legmac/argo.git'
-    targetRevision: HEAD
-  project: dev
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+  syncPolicy: {}
