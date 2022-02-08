@@ -7,14 +7,12 @@ metadata:
 spec:
   destination:
     server: https://kubernetes.default.svc
+    namespace: default
   project: dev
   source:
     path: apps/
-    repoURL: https://github.com/legmac/argo.git  #https://github.com/arthurk/argocd-example-install.git
-    targetRevision: HEAD
+    repoURL: https://github.com/legmac/argo.git
   syncPolicy:
-    syncOptions:
-      - CreateNamespace=true
     automated:
       prune: true
       selfHeal: true
