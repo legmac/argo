@@ -8,7 +8,6 @@ spec:
   source:
     repoURL: 'https://evryfs.github.io/helm-charts/'
     targetRevision: 0.0.11
-    helm:
     chart: spring-boot-admin
   destination:
     server: 'https://kubernetes.default.svc'
