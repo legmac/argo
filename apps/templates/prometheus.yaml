@@ -9,7 +9,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: default
-  project: default
+  project: dev
   source:
     chart: prometheus
     helm:
