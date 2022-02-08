@@ -8,10 +8,10 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: default
-  project: default
+  project: dev
   source:
     path: apps/
-    repoURL: https://github.com/arthurk/argocd-example-install.git
+    repoURL: https://github.com/legmac/argo.git  #https://github.com/arthurk/argocd-example-install.git
     targetRevision: HEAD
   syncPolicy:
     automated:
