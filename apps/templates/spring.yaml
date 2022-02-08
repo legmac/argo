@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: spring-boot-admin
+  namespace: monitoring
+spec:  
+  project: dev
+  source:
+    repoURL: 'https://evryfs.github.io/helm-charts/'
+    targetRevision: 0.0.11
+    helm:
+      valueFiles:
+        - values.yaml
+      releaseName: spring-boot-admin
+      version: v3
+    chart: spring-boot-admin
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: monitoring
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
