@@ -2,21 +2,18 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: root
-  namespace: default
-  finalizers:
-  - resources-finalizer.argocd.argoproj.io
+  namespace: argocd
 spec:
-  project: dev
-  source:
-    repoURL: 'https://github.com/legmac/argo'
-    path: apps
-    targetRevision: HEAD
-    helm:
-      valueFiles:
-        - values.yaml
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: default
+  project: default
+  source:
+    helm:
+      valueFiles:
+        - values.yaml
+    path: apps
+    repoURL: 'https://github.com/legmac/argo.git'
+    targetRevision: HEAD
   syncPolicy:
-    syncOptions:
-      - CreateNamespace=true
+    automated: {}
