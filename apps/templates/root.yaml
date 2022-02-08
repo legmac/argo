@@ -7,7 +7,6 @@ metadata:
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: default-dev
   project: dev
   source:
     path: apps/
