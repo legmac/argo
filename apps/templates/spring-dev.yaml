@@ -2,6 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: spring-boot-admin
+  namespace: default
 spec:  
   project: dev
   source:
@@ -15,7 +16,7 @@ spec:
     chart: spring-boot-admin
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: monitoring
+    namespace: default
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
