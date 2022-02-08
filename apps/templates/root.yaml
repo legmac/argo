@@ -14,3 +14,7 @@ spec:
     repoURL: https://github.com/legmac/argo.git'
     targetRevision: HEAD
   project: dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
